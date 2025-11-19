@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillConnect - India's Premier Job Platform</title>
+  
+  <!-- ⚡ DNS Prefetch for faster loading -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  
+  <!-- ⚡ Preconnect for critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Loading Screen REMOVED - Direct content load -->
+  <style>
+    /* Hide loading screen completely */
+    #loading-screen {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+    
+    /* FORCE SHOW ALL CONTENT IMMEDIATELY */
+    body {
+      background: var(--gray-50) !important;
+      min-height: 100vh !important;
+      overflow-x: hidden !important;
+    }
+    
+    /* Show all main sections */
+    .hero, .trusted-companies, .categories, .stats-section, 
+    .how-it-works, .recent-jobs, .platform-stats, .newsletter, 
+    .testimonials, .faq, .mobile-app {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+    
+    /* Reset any AOS hiding */
+    [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    
+    /* Fix navbar */
+    .navbar {
+      position: fixed !important;
+      top: 0 !important;
+      width: 100% !important;
+      z-index: 1000 !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    /* Add margin for fixed navbar */
+    .hero {
+      margin-top: 0 !important;
+      padding-top: 140px !important;
+      min-height: 100vh !important;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+        <i class="fas fa-briefcase"></i>
+        SkillConnect
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="jobs.html" id="jobs-link">Find Jobs</a></li>
+        <li><a href="companies.html">Companies</a></li>
+        <li><a href="profile.html" id="profile-link">Profile</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="register.html" class="btn-primary">Get Started</a>
+      </div>
+      <div class="mobile-menu-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home" data-aos="fade-up" style="display: block !important; opacity: 1 !important; visibility: visible !important; background: linear-gradient(135deg, #0d9488, #f97316) !important; color: white !important; padding: 140px 0 100px !important; min-height: 100vh !important;">
+    <div class="hero-background">
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+      <div class="hero-shape shape-3"></div>
+    </div>
+    <div class="hero-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex !important; align-items: center !important;">
+      <div class="hero-content" style="display: block !important; opacity: 1 !important;">
+        <div class="hero-badge" data-aos="fade-down" data-aos-delay="200" style="display: inline-flex !important; align-items: center !important; gap: 10px !important; background: rgba(255,255,255,0.2) !important; padding: 8px 20px !important; border-radius: 30px !important; font-size: 14px !important; margin-bottom: 30px !important;">
+          <i class="fas fa-rocket"></i>
+          India's #1 Job Platform
+        </div>
+        <h1 data-aos="fade-up" data-aos-delay="400" style="font-size: 48px !important; font-weight: 800 !important; line-height: 1.2 !important; margin-bottom: 20px !important; color: white !important;">
+          Launch Your Career with <span class="highlight" style="background: linear-gradient(135deg, #fed7aa, #ffffff) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important;">SkillConnect</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="600" style="font-size: 18px !important; line-height: 1.6 !important; margin-bottom: 40px !important; color: rgba(255,255,255,0.9) !important; max-width: 600px !important;">
+          Discover thousands of verified job opportunities from top companies across India. Connect with your dream job today and build your future!
+        </p>
+        
+        <!-- Search Bar -->
+        <div class="search-container" data-aos="fade-up" data-aos-delay="800" style="max-width: 1250px !important;">
+          <div class="search-bar" style="display: grid !important; grid-template-columns: 3fr 2.3fr 2.4fr auto !important; gap: 12px !important; background: white !important; padding: 15px !important; border-radius: 15px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;">
+            <div class="search-field" style="position: relative !important;">
+              <i class="fas fa-search search-icon" style="position: absolute !important; left: 16px !important; top: 50% !important; transform: translateY(-50%) !important; color: #9ca3af !important; z-index: 2 !important;"></i>
+              <input type="text" id="search-keyword" placeholder="Job title, keywords, or company" style="width: 100% !important; padding: 16px 16px 16px 45px !important; border: none !important; border-radius: 10px !important; font-size: 16px !important; color: #1f2937 !important; background: #f9fafb !important; outline: none !important;">
+            </div>
+            <div class="search-field" style="position: relative !important;">
+              <i class="fas fa-map-marker-alt search-icon" style="position: absolute !important; left: 16px !important; top: 50% !important; transform: translateY(-50%) !important; color: #9ca3af !important; z-index: 2 !important;"></i>
+              <select id="search-location" style="width: 100% !important; min-width: 185px !important; padding: 16px 40px 16px 45px !important; border: none !important; border-radius: 10px !important; font-size: 15px !important; color: #1f2937 !important; background: #f9fafb !important; outline: none !important; cursor: pointer !important; appearance: none !important; background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6,9 12,15 18,9\'%3e%3c/polyline%3e%3c/svg%3e') !important; background-repeat: no-repeat !important; background-position: right 16px center !important; background-size: 14px !important;">
+                <option value="">All Locations</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="pune">Pune</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="delhi">Delhi</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="chennai">Chennai</option>
+                <option value="remote">Remote</option>
+              </select>
+            </div>
+            <div class="search-field" style="position: relative !important;">
+              <i class="fas fa-briefcase search-icon" style="position: absolute !important; left: 16px !important; top: 50% !important; transform: translateY(-50%) !important; color: #9ca3af !important; z-index: 2 !important;"></i>
+              <select id="search-category" style="width: 100% !important; min-width: 180px !important; padding: 16px 45px 16px 45px !important; border: none !important; border-radius: 10px !important; font-size: 15px !important; color: #1f2937 !important; background: #f9fafb !important; outline: none !important; cursor: pointer !important; appearance: none !important; background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6,9 12,15 18,9\'%3e%3c/polyline%3e%3c/svg%3e') !important; background-repeat: no-repeat !important; background-position: right 16px center !important; background-size: 14px !important;">
+                <option value="">All Category</option>
+                <option value="it">IT & Software</option>
+                <option value="marketing">Marketing</option>
+                <option value="finance">Finance</option>
+                <option value="design">Design</option>
+                <option value="hr">HR & Admin</option>
+                <option value="sales">Sales</option>
+                <option value="engineering">Engineering</option>
+              </select>
+            </div>
+            <button class="search-btn" id="search-btn" style="background: linear-gradient(135deg, #f97316, #ea580c) !important; border: none !important; border-radius: 12px !important; padding: 16px 24px !important; color: white !important; cursor: pointer !important; display: flex !important; align-items: center !important; gap: 8px !important; font-weight: 600 !important; font-size: 16px !important; white-space: nowrap !important; transition: transform 0.3s ease !important;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+              <i class="fas fa-search"></i>
+              <span>Search</span>
+            </button>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div class="popular-searches" data-aos="fade-up" data-aos-delay="1000">
+          <span><i class="fas fa-fire"></i> Trending:</span>
+          <a href="#" onclick="quickSearch('React Developer')">React Developer</a>
+          <a href="#" onclick="quickSearch('UI Designer')">UI Designer</a>
+          <a href="#" onclick="quickSearch('Data Analyst')">Data Analyst</a>
+          <a href="#" onclick="quickSearch('Product Manager')">Product Manager</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="600" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;">
+        <div class="hero-main-content" style="background: rgba(255,255,255,0.15) !important; backdrop-filter: blur(20px) !important; border-radius: 20px !important; padding: 50px !important; text-align: center !important; border: 1px solid rgba(255,255,255,0.2) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important; max-width: 500px !important;">
+          
+          <div class="hero-features">
+            <h4 class="hero-features-title">Why Choose SkillConnect?</h4>
+            <div class="features-list">
+              <div class="feature-item">
+                <div class="feature-icon feature-icon-success">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span class="feature-text">Verified job opportunities</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon feature-icon-primary">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span class="feature-text">Direct employer connections</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon feature-icon-danger">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span class="feature-text">Free career support</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cta-buttons" style="display: flex !important; gap: 15px !important; justify-content: center !important; flex-wrap: wrap !important;">
+            <a href="register.html" style="background: linear-gradient(135deg, #f97316, #ea580c) !important; color: white !important; padding: 15px 30px !important; border-radius: 12px !important; text-decoration: none !important; font-weight: 600 !important; font-size: 16px !important; display: flex !important; align-items: center !important; gap: 10px !important; transition: transform 0.3s ease !important;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+              <i class="fas fa-rocket"></i>
+              Get Started Free
+            </a>
+            <a href="jobs.html" style="background: rgba(255,255,255,0.2) !important; color: white !important; padding: 15px 30px !important; border-radius: 12px !important; text-decoration: none !important; font-weight: 600 !important; font-size: 16px !important; border: 1px solid rgba(255,255,255,0.3) !important; display: flex !important; align-items: center !important; gap: 10px !important; transition: all 0.3s ease !important;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+              <i class="fas fa-search"></i>
+              Browse Jobs
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Companies -->
+  <section class="trusted-companies" data-aos="fade-up">
+    <div class="container">
+      <p><i class="fas fa-shield-alt"></i> Trusted by 500+ companies across India</p>
+      <div class="companies-slider">
+        <div class="company-logo">
+          <i class="fab fa-microsoft"></i>
+          <span>Microsoft</span>
+        </div>
+        <div class="company-logo">
+          <i class="fab fa-google"></i>
+          <span>Google</span>
+        </div>
+        <div class="company-logo">
+          <i class="fab fa-amazon"></i>
+          <span>Amazon</span>
+        </div>
+        <div class="company-logo">
+          <i class="fab fa-facebook-f"></i>
+          <span>Meta</span>
+        </div>
+        <div class="company-logo">
+          <i class="fas fa-code"></i>
+          <span>TCS</span>
+        </div>
+        <div class="company-logo">
+          <i class="fas fa-laptop-code"></i>
+          <span>Infosys</span>
+        </div>
+        <div class="company-logo">
+          <i class="fas fa-cogs"></i>
+          <span>Wipro</span>
+        </div>
+        <div class="company-logo">
+          <i class="fab fa-salesforce"></i>
+          <span>Salesforce</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Categories -->
+  <section class="categories" id="categories" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explore By Category</h2>
+        <p>Find your perfect job in your preferred field</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="category-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>IT & Software</h3>
+          <p class="job-count">12,450 jobs available</p>
+          <div class="category-skills">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Python</span>
+          </div>
+          <button class="btn-category" onclick="searchByCategory('it')">
+            Explore Jobs <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="category-icon marketing">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>Marketing</h3>
+          <p class="job-count">3,240 jobs available</p>
+          <div class="category-skills">
+            <span>Digital</span>
+            <span>SEO</span>
+            <span>Content</span>
+          </div>
+          <button class="btn-category" onclick="searchByCategory('marketing')">
+            Explore Jobs <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="category-icon finance">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <h3>Finance</h3>
+          <p class="job-count">5,670 jobs available</p>
+          <div class="category-skills">
+            <span>Analysis</span>
+            <span>Banking</span>
+            <span>Investment</span>
+          </div>
+          <button class="btn-category" onclick="searchByCategory('finance')">
+            Explore Jobs <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="category-icon design">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Design</h3>
+          <p class="job-count">2,180 jobs available</p>
+          <div class="category-skills">
+            <span>UI/UX</span>
+            <span>Figma</span>
+            <span>Adobe</span>
+          </div>
+          <button class="btn-category" onclick="searchByCategory('design')">
+            Explore Jobs <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <div class="category-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="category-icon business">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Sales</h3>
+          <p class="job-count">4,320 jobs available</p>
+          <div class="category-skills">
+            <span>B2B</span>
+            <span>CRM</span>
+            <span>Lead Gen</span>
+          </div>
+          <button class="btn-category" onclick="searchByCategory('sales')">
+            Explore Jobs <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <div class="category-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="category-icon engineering">
+            <i class="fas fa-cog"></i>
+          </div>
+          <h3>Engineering</h3>
+          <p class="job-count">6,890 jobs available</p>
+          <div class="category-skills">
+            <span>Mechanical</span>
+            <span>Civil</span>
+            <span>Electrical</span>
+          </div>
+          <button class="btn-category" onclick="searchByCategory('engineering')">
+            Explore Jobs <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section" data-aos="fade-up">
+    <div class="stats-background">
+      <div class="stats-shape shape-1"></div>
+      <div class="stats-shape shape-2"></div>
+    </div>
+    <div class="container">
+      <div class="stats-content">
+        <h2>More than <span class="stats-highlight">1M+ People</span> Successfully Connected</h2>
+        <p>Join millions of professionals who found their dream jobs through SkillConnect. Your success story starts here!</p>
+        <div class="stats-features">
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Verified Companies Only</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Real-time Job Alerts</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Free Resume Builder</span>
+          </div>
+        </div>
+        <a href="register.html" class="btn-primary btn-large">
+          <i class="fas fa-rocket"></i>
+          Start Your Journey Today
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Getting Started is Easy</h2>
+        <p>Follow these 3 simple steps to find your dream job</p>
+      </div>
+      <div class="steps-container">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-number">
+            <span>1</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <h3>Create Your Profile</h3>
+          <p>Sign up for free and build your professional profile in just 2 minutes. Add your skills, experience, and preferences.</p>
+          <div class="step-features">
+            <span><i class="fas fa-check"></i> Free Registration</span>
+            <span><i class="fas fa-check"></i> Resume Builder</span>
+            <span><i class="fas fa-check"></i> Profile Optimization</span>
+          </div>
+        </div>
+        
+        <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-number">
+            <span>2</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Search & Apply</h3>
+          <p>Browse through thousands of verified job listings from top companies. Filter by location, salary, and skills that match you.</p>
+          <div class="step-features">
+            <span><i class="fas fa-check"></i> Smart Filters</span>
+            <span><i class="fas fa-check"></i> One-Click Apply</span>
+            <span><i class="fas fa-check"></i> Job Alerts</span>
+          </div>
+        </div>
+        
+        <div class="step-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="step-number">
+            <span>3</span>
+          </div>
+          <div class="step-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Get Hired</h3>
+          <p>Connect directly with hiring managers, track your applications, and land your dream job faster than traditional methods.</p>
+          <div class="step-features">
+            <span><i class="fas fa-check"></i> Direct Contact</span>
+            <span><i class="fas fa-check"></i> Interview Prep</span>
+            <span><i class="fas fa-check"></i> Career Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Stats -->
+  <section class="platform-stats" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose SkillConnect?</h2>
+        <p>Leading the industry with proven results</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="stat-number" data-count="50000">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Active Jobs</div>
+          <div class="stat-description">Fresh opportunities daily</div>
+        </div>
+        
+        <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="stat-number" data-count="20583">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Companies</div>
+          <div class="stat-description">Verified employers</div>
+        </div>
+        
+        <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-number" data-count="1000000">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Job Seekers</div>
+          <div class="stat-description">Successful placements</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" data-aos="fade-up">
+    <div class="newsletter-background">
+      <div class="newsletter-shape shape-1"></div>
+      <div class="newsletter-shape shape-2"></div>
+    </div>
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>Never Miss Your Dream Job</h2>
+          <p>Get personalized job recommendations and industry insights delivered straight to your inbox. Join 500K+ professionals already subscribed.</p>
+          <div class="newsletter-features">
+            <div class="feature">
+              <i class="fas fa-bell"></i>
+              <span>Instant job alerts</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-chart-line"></i>
+              <span>Industry insights</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-envelope"></i>
+              <span>Weekly newsletter</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="newsletter-form-container">
+          <div class="newsletter-form">
+            <div class="form-group">
+              <i class="fas fa-envelope form-icon"></i>
+              <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+            </div>
+            <button class="btn-primary btn-newsletter" id="subscribe-btn">
+              <span class="btn-text">Subscribe Now</span>
+              <span class="btn-loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i>
+              </span>
+            </button>
+          </div>
+          <p class="newsletter-privacy">
+            <i class="fas fa-shield-alt"></i>
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Success Stories</h2>
+        <p>What our community says about SkillConnect</p>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonial-card active" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-content">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>"SkillConnect transformed my career search! I found my dream job as a Software Developer at a top tech company within 3 weeks. The platform's smart matching system is incredible."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-info">
+              <h4>Priya Sharma</h4>
+              <span>Software Developer at Microsoft</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-content">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>"Amazing platform with verified companies! I received 5 interview calls in the first week itself. The job alerts feature is a game-changer for busy professionals like me."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-info">
+              <h4>Rohit Kumar</h4>
+              <span>Marketing Manager at Flipkart</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-content">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>"The premium support and resume optimization tips were outstanding. SkillConnect not only helped me find a job but also improved my professional profile significantly."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-info">
+              <h4>Aarti Patel</h4>
+              <span>UX Designer at Google</span>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-navigation">
+        <button class="nav-btn prev" onclick="previousTestimonial()" title="Previous testimonial" aria-label="Previous testimonial">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="testimonial-dots">
+          <span class="dot active" onclick="currentTestimonial(0)"></span>
+          <span class="dot" onclick="currentTestimonial(1)"></span>
+          <span class="dot" onclick="currentTestimonial(2)"></span>
+        </div>
+        <button class="nav-btn next" onclick="nextTestimonial()" title="Next testimonial" aria-label="Next testimonial">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about SkillConnect</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>How do I create an account on SkillConnect?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Creating an account is simple and free! Click the "Get Started" button, fill in your basic information including name, email, and phone number. You can then complete your profile by adding your skills, experience, and job preferences. The entire process takes less than 5 minutes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>Are all job postings verified and legitimate?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, absolutely! We have a strict verification process for all companies and job postings. Our team manually reviews each job listing to ensure authenticity, verify company details, and prevent spam or fraudulent postings. We also collect feedback from job seekers to maintain quality standards.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>Is SkillConnect completely free to use?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, all basic features including job search, profile creation, and job applications are completely free. We also offer SkillConnect Premium with additional benefits like priority support, advanced analytics, resume optimization, and exclusive job opportunities for a small monthly fee.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>How can I improve my chances of getting hired?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>To maximize your success: (1) Complete your profile 100% with a professional photo, (2) Write a compelling summary highlighting your key achievements, (3) Keep your skills updated and relevant, (4) Apply to jobs regularly and promptly, (5) Use our resume builder tool, and (6) Enable job alerts to never miss opportunities.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>How does the job alert system work?</h3>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our smart job alert system sends you personalized notifications via email and SMS when new jobs matching your preferences are posted. You can set alerts based on job title, location, salary range, company size, and industry. Alerts are sent in real-time, daily, or weekly based on your preference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile App Promotion -->
+  <section class="mobile-app" data-aos="fade-up">
+    <div class="container">
+      <div class="app-container">
+        <div class="app-content">
+          <div class="app-badge">
+            <i class="fas fa-mobile-alt"></i>
+            Now Available on Mobile
+          </div>
+          <h2>Get the SkillConnect Mobile App</h2>
+          <p>Take your job search on the go! Apply to jobs, get notifications, and manage your profile anywhere, anytime.</p>
+          
+          <div class="app-features">
+            <div class="app-feature">
+              <i class="fas fa-bell"></i>
+              <span>Instant push notifications</span>
+            </div>
+            <div class="app-feature">
+              <i class="fas fa-search"></i>
+              <span>Quick job search</span>
+            </div>
+            <div class="app-feature">
+              <i class="fas fa-user-edit"></i>
+              <span>Easy profile management</span>
+            </div>
+          </div>
+          
+          <div class="app-download">
+            <a href="#" class="app-store-btn">
+              <div class="store-icon">
+                <i class="fab fa-apple"></i>
+              </div>
+              <div class="store-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="play-store-btn">
+              <div class="store-icon">
+                <i class="fab fa-google-play"></i>
+              </div>
+              <div class="store-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="app-mockup">
+          <div class="phone-container">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="app-interface">
+                  <div class="app-header">
+                    <i class="fas fa-briefcase"></i>
+                    <span>SkillConnect</span>
+                  </div>
+                  <div class="app-search">
+                    <i class="fas fa-search"></i>
+                    <span>Search jobs...</span>
+                  </div>
+                  <div class="app-jobs">
+                    <div class="app-job-card">
+                      <div class="job-title">Frontend Developer</div>
+                      <div class="job-company">Tech Corp</div>
+                    </div>
+                    <div class="app-job-card">
+                      <div class="job-title">UI Designer</div>
+                      <div class="job-company">Design Studio</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-background">
+      <div class="footer-shape shape-1"></div>
+      <div class="footer-shape shape-2"></div>
+    </div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section main">
+          <div class="footer-logo">
+            <i class="fas fa-briefcase"></i>
+            SkillConnect
+          </div>
+          <p>India's premier job platform connecting talented professionals with top companies. Build your career, find your passion, and achieve your dreams with us.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/NijaMujawar" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>For Job Seekers</h3>
+          <ul>
+            <li><a href="jobs.html">Browse Jobs</a></li>
+            <li><a href="profile.html">Create Profile</a></li>
+            <li><a href="#">Resume Builder</a></li>
+            <li><a href="#">Salary Guide</a></li>
+            <li><a href="#">Career Resources</a></li>
+            <li><a href="#">Interview Tips</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>For Employers</h3>
+          <ul>
+            <li><a href="#">Post Jobs</a></li>
+            <li><a href="#">Find Candidates</a></li>
+            <li><a href="#">Recruitment Solutions</a></li>
+            <li><a href="#">Pricing Plans</a></li>
+            <li><a href="#">Enterprise</a></li>
+            <li><a href="#">HR Resources</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Contact</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>support@skillconnect.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 87660 58380</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Solapur, Maharashtra, India</span>
+            </div>
+          </div>
+          
+          <div class="contact-form-footer">
+            <h4>Send us a message</h4>
+            <form id="contact-form">
+              <input type="text" id="contact-name" placeholder="Your Name" required>
+              <input type="email" id="contact-email" placeholder="Your Email" required>
+              <textarea id="contact-message" placeholder="Your Message" rows="3" required></textarea>
+              <button type="submit" class="btn-primary btn-small">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display: none;">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 SkillConnect. All rights reserved. Made with <i class="fas fa-heart"></i> in India</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 🎯 Stats Animation
+  const animateStats = () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach((stat, index) => {
+      const target = parseInt(stat.getAttribute('data-count')) || 0;
+      let current = 0;
+      const increment = Math.ceil(target / 100);
+
+      const animate = () => {
+        current += increment;
+        stat.textContent = current >= target ? target.toLocaleString() : current.toLocaleString();
+        if (current < target) setTimeout(animate, 25);
+      };
+
+      setTimeout(animate, index * 300);
+    });
+  };
+
+  // 🗣️ Testimonials Rotation
+  const initTestimonials = () => {
+    let current = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+
+    const show = index => {
+      testimonials.forEach((card, i) => {
+        card.classList.toggle('active', i === index);
+        if (dots[i]) dots[i].classList.toggle('active', i === index);
+      });
+      current = index;
+    };
+
+    setInterval(() => show((current + 1) % testimonials.length), 5000);
+
+    window.nextTestimonial = () => show((current + 1) % testimonials.length);
+    window.previousTestimonial = () => show((current - 1 + testimonials.length) % testimonials.length);
+    window.currentTestimonial = index => show(index);
+
+    show(0); // Initial display
+  };
+
+  // 🔐 Auth Check
+  const checkAuth = () => {
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+      console.warn('🔒 No access token found.');
+      // Optional redirect:
+      // window.location.href = 'login.html?next=index.html';
+    }
+  };
+
+  // ✅ Newsletter Button Logic
+  const bindNewsletterButton = () => {
+    const subscribeBtn = document.getElementById('subscribe-btn');
+    const emailInput = document.getElementById('newsletter-email');
+    const btnText = document.querySelector('.btn-text');
+    const btnLoading = document.querySelector('.btn-loading');
+
+    if (!subscribeBtn || !emailInput) {
+      console.warn('⚠️ Newsletter elements not found');
+      return;
+    }
+
+    subscribeBtn.addEventListener('click', async () => {
+      const email = emailInput.value.trim();
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailInput.classList.add('error');
+        showNotification('Please enter a valid email address', 'error');
+        return;
+      } else {
+        emailInput.classList.remove('error');
+      }
+
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline-block';
+      subscribeBtn.disabled = true;
+
+      try {
+        const response = await fetch("http://localhost:8000/api/newsletter/subscribe/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          showNotification('Subscribed successfully! 🎉', 'success');
+          emailInput.value = '';
+        } else {
+          showNotification(data.email?.[0] || 'Subscription failed', 'error');
+        }
+      } catch (err) {
+        showNotification('Server error. Please try again later.', 'error');
+      }
+
+      btnText.style.display = 'inline-block';
+      btnLoading.style.display = 'none';
+      subscribeBtn.disabled = false;
+    });
+  };
+
+  // ✅ Contact Form Logic
+  const bindContactForm = () => {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (!contactForm) {
+      console.warn('⚠️ Contact form not found');
+      return;
+    }
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const messageInput = document.getElementById('contact-message');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const btnLoading = submitBtn.querySelector('.btn-loading');
+
+      // Get form data
+      const formData = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        message: messageInput.value.trim()
+      };
+
+      // Validation
+      let hasError = false;
+      
+      if (!formData.name || formData.name.length < 2) {
+        nameInput.classList.add('error');
+        showNotification('Name must be at least 2 characters', 'error');
+        hasError = true;
+      } else {
+        nameInput.classList.remove('error');
+      }
+
+      if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        emailInput.classList.add('error');
+        showNotification('Please enter a valid email address', 'error');
+        hasError = true;
+      } else {
+        emailInput.classList.remove('error');
+      }
+
+      if (!formData.message || formData.message.length < 10) {
+        messageInput.classList.add('error');
+        showNotification('Message must be at least 10 characters', 'error');
+        hasError = true;
+      } else {
+        messageInput.classList.remove('error');
+      }
+
+      if (hasError) return;
+
+      // Show loading state
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline-block';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch("http://localhost:8000/api/newsletter/contact/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          showNotification(data.msg || 'Message sent successfully! 🎉', 'success');
+          contactForm.reset();
+        } else {
+          if (data.errors) {
+            // Handle field-specific errors
+            Object.keys(data.errors).forEach(field => {
+              const fieldInput = document.getElementById(`contact-${field}`);
+              if (fieldInput) {
+                fieldInput.classList.add('error');
+                showNotification(data.errors[field][0], 'error');
+              }
+            });
+          } else {
+            showNotification('Failed to send message. Please try again.', 'error');
+          }
+        }
+      } catch (err) {
+        console.error('Contact form error:', err);
+        showNotification('Server error. Please check your connection and try again.', 'error');
+      }
+
+      // Reset button state
+      btnText.style.display = 'inline-block';
+      btnLoading.style.display = 'none';
+      submitBtn.disabled = false;
+    });
+  };
+
+  // � Job Search Functionality
+  const initJobSearch = () => {
+    const searchBtn = document.getElementById('search-btn');
+    const keywordInput = document.getElementById('search-keyword');
+    const locationSelect = document.getElementById('search-location');
+    const categorySelect = document.getElementById('search-category');
+    const resultsContainer = document.getElementById('search-results');
+
+    // Mock job data
+    const mockJobs = [
+      {
+        id: 1,
+        title: 'React Developer',
+        company: 'TechCorp Solutions',
+        location: 'Mumbai',
+        category: 'it',
+        salary: '₹8-12 LPA',
+        type: 'Full-time',
+        posted: '2 days ago',
+        logo: 'fas fa-laptop-code',
+        skills: ['React', 'JavaScript', 'Node.js']
+      },
+      {
+        id: 2,
+        title: 'UI/UX Designer',
+        company: 'DesignStudio India',
+        location: 'Bangalore',
+        category: 'design',
+        salary: '₹6-10 LPA',
+        type: 'Full-time',
+        posted: '1 day ago',
+        logo: 'fas fa-palette',
+        skills: ['Figma', 'Adobe XD', 'UI Design']
+      },
+      {
+        id: 3,
+        title: 'Data Analyst',
+        company: 'Analytics Pro',
+        location: 'Pune',
+        category: 'finance',
+        salary: '₹5-8 LPA',
+        type: 'Full-time',
+        posted: '3 days ago',
+        logo: 'fas fa-chart-line',
+        skills: ['Python', 'SQL', 'Excel']
+      },
+      {
+        id: 4,
+        title: 'Product Manager',
+        company: 'Startup Hub',
+        location: 'Delhi',
+        category: 'marketing',
+        salary: '₹15-25 LPA',
+        type: 'Full-time',
+        posted: '4 days ago',
+        logo: 'fas fa-briefcase',
+        skills: ['Product Strategy', 'Analytics', 'Leadership']
+      },
+      {
+        id: 5,
+        title: 'Frontend Developer',
+        company: 'Web Solutions',
+        location: 'Remote',
+        category: 'it',
+        salary: '₹7-11 LPA',
+        type: 'Remote',
+        posted: '1 day ago',
+        logo: 'fas fa-code',
+        skills: ['Vue.js', 'CSS', 'JavaScript']
+      },
+      {
+        id: 6,
+        title: 'Digital Marketing Specialist',
+        company: 'Growth Media',
+        location: 'Hyderabad',
+        category: 'marketing',
+        salary: '₹4-7 LPA',
+        type: 'Full-time',
+        posted: '5 days ago',
+        logo: 'fas fa-bullhorn',
+        skills: ['SEO', 'Google Ads', 'Social Media']
+      }
+    ];
+
+    const performSearch = () => {
+      const keyword = keywordInput.value.toLowerCase().trim();
+      const location = locationSelect.value;
+      const category = categorySelect.value;
+
+      // Show loading state
+      resultsContainer.innerHTML = `
+        <div class="search-loading">
+          <i class="fas fa-spinner fa-spin"></i>
+          <span>Searching jobs...</span>
+        </div>
+      `;
+      resultsContainer.style.display = 'block';
+
+      // Simulate API delay
+      setTimeout(() => {
+        let filteredJobs = mockJobs;
+
+        // Filter by keyword
+        if (keyword) {
+          filteredJobs = filteredJobs.filter(job => 
+            job.title.toLowerCase().includes(keyword) ||
+            job.company.toLowerCase().includes(keyword) ||
+            job.skills.some(skill => skill.toLowerCase().includes(keyword))
+          );
+        }
+
+        // Filter by location
+        if (location) {
+          filteredJobs = filteredJobs.filter(job => 
+            job.location.toLowerCase() === location.toLowerCase()
+          );
+        }
+
+        // Filter by category
+        if (category) {
+          filteredJobs = filteredJobs.filter(job => 
+            job.category === category
+          );
+        }
+
+        // Display results
+        displaySearchResults(filteredJobs, keyword, location, category);
+      }, 1000);
+    };
+
+    const displaySearchResults = (jobs, keyword, location, category) => {
+      if (jobs.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="search-empty">
+            <i class="fas fa-search"></i>
+            <h3>No jobs found</h3>
+            <p>Try adjusting your search criteria or browse all categories</p>
+            <button onclick="clearSearch()" class="btn-secondary">Clear Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      const searchSummary = `
+        <div class="search-summary">
+          <h3>Found ${jobs.length} jobs</h3>
+          ${keyword ? `<span class="search-tag">Keyword: ${keyword}</span>` : ''}
+          ${location ? `<span class="search-tag">Location: ${location}</span>` : ''}
+          ${category ? `<span class="search-tag">Category: ${category}</span>` : ''}
+          <button onclick="clearSearch()" class="btn-clear">Clear All</button>
+        </div>
+      `;
+
+      const jobCards = jobs.map(job => `
+        <div class="job-card" data-job-id="${job.id}">
+          <div class="job-header">
+            <div class="job-logo">
+              <i class="${job.logo}"></i>
+            </div>
+            <div class="job-info">
+              <h4 class="job-title">${job.title}</h4>
+              <p class="job-company">${job.company}</p>
+              <div class="job-meta">
+                <span class="job-location"><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+                <span class="job-type"><i class="fas fa-clock"></i> ${job.type}</span>
+                <span class="job-posted"><i class="fas fa-calendar"></i> ${job.posted}</span>
+              </div>
+            </div>
+            <div class="job-salary">
+              <span>${job.salary}</span>
+            </div>
+          </div>
+          <div class="job-skills">
+            ${job.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+          </div>
+          <div class="job-actions">
+            <button class="btn-apply" onclick="applyJob(${job.id})">
+              <i class="fas fa-paper-plane"></i> Apply Now
+            </button>
+            <button class="btn-save" onclick="saveJob(${job.id})">
+              <i class="far fa-heart"></i> Save
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      resultsContainer.innerHTML = searchSummary + jobCards;
+    };
+
+    // Event listeners
+    searchBtn.addEventListener('click', performSearch);
+    
+    // Enter key search
+    keywordInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') performSearch();
+    });
+
+    // Global functions for buttons
+    window.clearSearch = () => {
+      keywordInput.value = '';
+      locationSelect.value = '';
+      categorySelect.value = '';
+      resultsContainer.style.display = 'none';
+      resultsContainer.innerHTML = '';
+    };
+
+    window.applyJob = (jobId) => {
+      const job = mockJobs.find(j => j.id === jobId);
+      if (job) {
+        showNotification(`Applied to ${job.title} at ${job.company}! 🎉`, 'success');
+      }
+    };
+
+    window.saveJob = (jobId) => {
+      const job = mockJobs.find(j => j.id === jobId);
+      if (job) {
+        showNotification(`${job.title} saved to your favorites! 💖`, 'info');
+      }
+    };
+  };
+
+  // Quick search from trending keywords
+  window.quickSearch = (keyword) => {
+    const keywordInput = document.getElementById('search-keyword');
+    keywordInput.value = keyword;
+    
+    const searchBtn = document.getElementById('search-btn');
+    if (searchBtn) {
+      searchBtn.click();
+    }
+  };
+
+  // Category search - Direct redirect to jobs.html with category filter
+  window.searchByCategory = (category) => {
+    // Redirect directly to jobs page with category parameter
+    window.location.href = `jobs.html?category=${category}`;
+  };
+
+  // �🔔 Notification UI
+  const showNotification = (message, type = 'info') => {
+    const colors = {
+      success: '#10b981',
+      error: '#ef4444',
+      warning: '#f59e0b',
+      info: '#3b82f6'
+    };
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: ${colors[type] || colors.info};
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      z-index: 10000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      max-width: 300px;
+    `;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+    setTimeout(() => {
+      notification.style.transform = 'translateX(100%)';
+      setTimeout(() => notification.remove(), 300);
+    }, 5000);
+  };
+
+  // 🚀 Initialize All
+  animateStats();
+  initTestimonials();
+  checkAuth();
+  bindNewsletterButton();
+  bindContactForm();
+  initJobSearch();
+});
+</script>
+
+
+</body>
+</html>
